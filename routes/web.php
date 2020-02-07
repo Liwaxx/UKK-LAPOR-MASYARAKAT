@@ -12,5 +12,8 @@
 */
 
 Route::get('/', function () {
-    return view('welcome');
+    return view('pages.user.dashboard');
+});
+Route::get('/lapor', function () {
+    return view('pages.user.buatLaporan');
 });
