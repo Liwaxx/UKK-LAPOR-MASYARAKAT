@@ -28,7 +28,7 @@ Lapor
                         <div class="position-relative row form-group"><label for="exampleEmail"
                                 class="col-sm-2 col-form-label">Kerusakan</label>
                             <div class="col-sm-10"><input name="email" id="exampleEmail"
-                                    placeholder="with a placeholder" type="email" class="form-control"></div>
+                                 type="email" class="form-control"></div>
                         </div>
                         <div class="position-relative row form-group"><label for="exampleSelect"
                                 class="col-sm-2 col-form-label">Kategori</label>

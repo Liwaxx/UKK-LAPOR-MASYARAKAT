@@ -11,9 +11,32 @@
 |
 */
 
-Route::get('/', function () {
-    return view('pages.user.dashboard');
+
+//LOGIN
+Route::get('/login', function () {
+    return view('login');
+})->name('login');
+Route::post('/login', 'AuthController@checklogin');
+
+//REGISTER
+Route::get('/register', function () {
+    return view('register');
 });
-Route::get('/lapor', function () {
-    return view('pages.user.buatLaporan');
+Route::post('/register', 'AuthController@postRegis');
+
+//PREFIX USER
+Route::prefix('user')->middleware('access')->group(function() {
+    Route::get('/', function () {
+        return view('pages.user.dashboard');
+    });
+    Route::get('/lapor', function () {
+        return view('pages.user.buatLaporan');
+    });
+});
+
+//PREFIX ADMIN
+Route::prefix('admin')->group(function() {
+    Route::get('/', function () {
+        return view('pages.admin.dashboard');
+    });
 });

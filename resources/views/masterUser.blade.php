@@ -74,13 +74,10 @@
                                         </a>
                                         <div tabindex="-1" role="menu" aria-hidden="true"
                                             class="dropdown-menu dropdown-menu-right">
-                                            <button type="button" tabindex="0" class="dropdown-item">User
+                                            <button type="button" tabindex="0" class="dropdown-item disabled">User
                                                 Account</button>
                                             <button type="button" tabindex="0" class="dropdown-item">Settings</button>
-                                            <h6 tabindex="-1" class="dropdown-header">Header</h6>
-                                            <button type="button" tabindex="0" class="dropdown-item">Actions</button>
-                                            <div tabindex="-1" class="dropdown-divider"></div>
-                                            <button type="button" tabindex="0" class="dropdown-item">Dividers</button>
+                                            <button type="button" tabindex="0" class="dropdown-item">Log Out</button>
                                         </div>
                                     </div>
                                 </div>
@@ -91,12 +88,6 @@
                                     <div class="widget-subheading">
                                         VP People Manager
                                     </div>
-                                </div>
-                                <div class="widget-content-right header-user-info ml-3">
-                                    <button type="button"
-                                        class="btn-shadow p-1 btn btn-primary btn-sm show-toastr-example">
-                                        <i class="fa text-white fa-calendar pr-1 pl-1"></i>
-                                    </button>
                                 </div>
                             </div>
                         </div>
@@ -143,13 +134,13 @@
                         <ul class="vertical-nav-menu">
                             <li class="app-sidebar__heading">Dashboards</li>
                             <li>
-                            <a href="{{ url('/')}}" class="{{ Request::path() ==  '/' ? 'mm-active' : '' }}">
+                            <a href="{{ url('/user')}}" class="{{ Request::path() ==  '/user' ? 'mm-active' : '' }}">
                                     <i class="metismenu-icon pe-7s-rocket"></i>
                                     Laporan Masyarakat
                                 </a>
                             </li>
                             <li>
-                            <a href="{{ url('/lapor')}}" class="{{ Request::path() ==  'lapor' ? 'mm-active' : '' }}">
+                            <a href="{{ url('/user/lapor')}}" class="{{ Request::path() ==  'user/lapor' ? 'mm-active' : '' }}">
                                     <i class="metismenu-icon pe-7s-eyedropper">
                                     </i>Lapor
                                 </a>

@@ -1,29 +1,34 @@
 <?php
 
 namespace App\Helper;
-use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Validator;
 
 class requestValidator {
 
-    public function Login(Request $request)
+    public function Login($data)
     {
-        $validation =  Validator($request->all(), [
+        $validation =  Validator($data->all(), [
             'email' => 'required | email',
             'password' => 'required | min:6'
         ]);
-
-        return $validation;
+        if($validation->fails()){
+            return true;
+        }
+        return false;
     }
-    public function Register(Request $request)
+    public function Register($data)
     {
-        $validation =  Validator($request->all(), [
+        $validation =  Validator($data->all(), [
             'email' => 'required | email',
             'password' => 'required | min:6',
             'nama' => 'required | min:4',
-            'umur' => 'required | number',
+            'umur' => 'required | max:2',
+            'alamat' => 'required | min:10'
         ]);
 
-        return $validation;
+        if($validation->fails()){
+            return true;
+        }
+        return false;
     }
 }

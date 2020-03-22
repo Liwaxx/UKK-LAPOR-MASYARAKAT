@@ -20,7 +20,9 @@ class CreateUsersTable extends Migration
             $table->string('password');
             $table->integer('umur');
             $table->text('alamat');
-            $table->string('role');
+            $table->bigInteger('id_role')->unsigned();
+
+            $table->foreign('id_role')->references('id_role')->on('role');
         });
     }
 
