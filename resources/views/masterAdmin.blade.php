@@ -134,13 +134,13 @@
                         <ul class="vertical-nav-menu">
                             <li class="app-sidebar__heading">Dashboards</li>
                             <li>
-                            <a href="{{ url('/admin/laporan')}}" class="{{ Request::path() ==  'admin/laporan' ? 'mm-active' : '' }}">
+                            <a href="{{ url('/admin')}}" class="{{ Request::path() ==  'admin/' ? 'mm-active' : '' }}">
                                     <i class="metismenu-icon pe-7s-rocket"></i>
                                     Laporan Masyarakat
                                 </a>
                             </li>
                             <li>
-                            <a href="{{ url('/admin/user')}}" class="{{ Request::path() ==  'admin/user' ? 'mm-active' : '' }}">
+                            <a href="{{ url('/admin/data-user')}}" class="{{ Request::path() ==  'admin/data-user' ? 'mm-active' : '' }}">
                                     <i class="metismenu-icon pe-7s-eyedropper">
                                     </i>User dan Petugas
                                 </a>

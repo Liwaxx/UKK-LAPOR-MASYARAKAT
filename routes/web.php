@@ -18,14 +18,21 @@ Route::get('/login', function () {
 })->name('login');
 Route::post('/login', 'AuthController@checklogin');
 
+//LOGOUT
+Route::get('/logout', 'AuthController@logout');
+
 //REGISTER
 Route::get('/register', function () {
     return view('register');
 });
 Route::post('/register', 'AuthController@postRegis');
 
+Route::group(['middleware' => ['auth']], function () {
+
+});
+
 //PREFIX USER
-Route::prefix('user')->middleware('access')->group(function() {
+Route::prefix('user')->group(function() {
     Route::get('/', function () {
         return view('pages.user.dashboard');
     });
@@ -39,4 +46,15 @@ Route::prefix('admin')->group(function() {
     Route::get('/', function () {
         return view('pages.admin.dashboard');
     });
+    Route::get('/data-user', function () {
+        return view('pages\admin\admin1');
+    });
 });
+
+//PREFIX PETUGAS
+Route::prefix('petugas')->group(function (){
+    Route::get('/', function () {
+        return view('pages.petugas.dashboard');
+    });
+});
+

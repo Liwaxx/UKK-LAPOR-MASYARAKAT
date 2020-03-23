@@ -77,7 +77,7 @@
                                             <button type="button" tabindex="0" class="dropdown-item disabled">User
                                                 Account</button>
                                             <button type="button" tabindex="0" class="dropdown-item">Settings</button>
-                                            <button type="button" tabindex="0" class="dropdown-item">Log Out</button>
+                                            <a href="{{ url('/logout')}}" style="text-decoration:none"><button type="button" tabindex="0" class="dropdown-item">Log Out</button></a>
                                         </div>
                                     </div>
                                 </div>
