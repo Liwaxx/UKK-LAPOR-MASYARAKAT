@@ -27,13 +27,13 @@ class AuthController extends Controller
 
             if(Auth::attempt($crd)){
                 if(Auth::user()->id_role == 1){
-                    return redirect('user');
+                    return redirect('/user');
                 }
                 else if(Auth::user()->id_role == 2){
-                    return redirect('petugas');
+                    return redirect('/petugas');
                 }
                 else{
-                    return redirect('admin');
+                    return redirect('/admin');
                 }
             }
             else{
@@ -60,7 +60,7 @@ class AuthController extends Controller
         ]);
 
         if($data){
-            return redirect('/login')->with('message', 1);
+            return redirect('/login')->with('alert-success', 'Berhasil mendatar');
         }
     }
 

@@ -82,10 +82,10 @@
         </div>
     </div>
 
-    @if ($messgase ?? 0 === 1   )
+    @if (\Session::has('alert-success'))
         <div id="toast-container" class="toast-top-right">
             <div class="toast toast-success" aria-live="polite" style="">
-                <div class="toast-title">Berhasil daftar</div>
+                <div class="toast-title">{{Session::get('alert-success')}}</div>
                 <div class="toast-message">Terimakasih</div>
             </div>
         </div>

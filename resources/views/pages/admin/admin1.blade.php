@@ -19,14 +19,32 @@ Data User
             </div>
         </div>
     </div>
+
+    <div class="row">
+        <div class="col-md-12">
+            <div class="main-card mb-3 card">
+                <div class="card-header">
+                    TAMBAH DATA
+                </div>
+                <div class="card-body">
+                    <div class="col">
+                        <button class="btn btn-success">
+                            TAMBAH USER
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
     <div class="row">
         <div class="col-md-12">
             <div class="main-card mb-3 card">
                 <div class="card-header">
                     PETUGAS
                 </div>
-                <div class="table-responsive">
-                    <table class="align-middle mb-0 table table-borderless table-striped table-hover">
+                <div class="table-responsive" style="padding : 1%">
+                    <table class="align-middle mb-0 table table-borderless table-striped table-hover" id="petugas">
                         <thead>
                             <tr>
                                 <th class="text-center">No</th>
@@ -61,8 +79,10 @@ Data User
                                     <div class="badge badge-warning">Pending</div>
                                 </td>
                                 <td class="text-center">
+                                    <button type="button" id="PopoverCustomT-1" class="btn btn-primary btn-sm"
+                                        data-toggle="modal" data-target="#myModal">Edit</button>
                                     <button type="button" id="PopoverCustomT-1"
-                                        class="btn btn-primary btn-sm">Details</button>
+                                        class="btn btn-danger btn-sm">Hapus</button>
                                 </td>
                             </tr>
                             <tr>
@@ -90,7 +110,7 @@ Data User
                                 </td>
                                 <td class="text-center">
                                     <button type="button" id="PopoverCustomT-2"
-                                        class="btn btn-primary btn-sm">Details</button>
+                                        class="btn btn-primary btn-sm">Edit</button>
                                 </td>
                             </tr>
                             <tr>
@@ -118,7 +138,7 @@ Data User
                                 </td>
                                 <td class="text-center">
                                     <button type="button" id="PopoverCustomT-3"
-                                        class="btn btn-primary btn-sm">Details</button>
+                                        class="btn btn-primary btn-sm">Edit</button>
                                 </td>
                             </tr>
                             <tr>
@@ -145,7 +165,7 @@ Data User
                                 </td>
                                 <td class="text-center">
                                     <button type="button" id="PopoverCustomT-4"
-                                        class="btn btn-primary btn-sm">Details</button>
+                                        class="btn btn-primary btn-sm">Edit</button>
                                 </td>
                             </tr>
                         </tbody>
@@ -154,6 +174,7 @@ Data User
             </div>
         </div>
     </div>
+
     <div class="row">
         <div class="col-md-12">
             <div class="main-card mb-3 card">
@@ -197,7 +218,7 @@ Data User
                                 </td>
                                 <td class="text-center">
                                     <button type="button" id="PopoverCustomT-1"
-                                        class="btn btn-primary btn-sm">Details</button>
+                                        class="btn btn-primary btn-sm">Edit</button>
                                 </td>
                             </tr>
                             <tr>
@@ -225,7 +246,7 @@ Data User
                                 </td>
                                 <td class="text-center">
                                     <button type="button" id="PopoverCustomT-2"
-                                        class="btn btn-primary btn-sm">Details</button>
+                                        class="btn btn-primary btn-sm">Edit</button>
                                 </td>
                             </tr>
                             <tr>
@@ -253,7 +274,7 @@ Data User
                                 </td>
                                 <td class="text-center">
                                     <button type="button" id="PopoverCustomT-3"
-                                        class="btn btn-primary btn-sm">Details</button>
+                                        class="btn btn-primary btn-sm">Edit</button>
                                 </td>
                             </tr>
                             <tr>
@@ -280,7 +301,7 @@ Data User
                                 </td>
                                 <td class="text-center">
                                     <button type="button" id="PopoverCustomT-4"
-                                        class="btn btn-primary btn-sm">Details</button>
+                                        class="btn btn-primary btn-sm">Edit</button>
                                 </td>
                             </tr>
                         </tbody>
@@ -290,4 +311,37 @@ Data User
         </div>
     </div>
 </div>
+@endsection
+
+@section('modal')
+<div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="mySmallModalLabel" aria-hidden="true"
+    style="display: none;">
+    <div class="modal-dialog modal-sm">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="exampleModalLongTitle">Edit Data</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">×</span>
+                </button>
+            </div>
+            <div class="modal-body">
+                <p>Praesent commodo cursus magna, vel scelerisque nisl consectetur et. Vivamus sagittis lacus vel augue
+                    laoreet rutrum faucibus dolor auctor.</p>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                <button type="button" class="btn btn-primary">Save changes</button>
+            </div>
+        </div>
+    </div>
+</div>
+@endsection
+
+@section('script')
+<script>
+    $(document).ready(function () {
+        $('#petugas').DataTable();
+    });
+
+</script>
 @endsection

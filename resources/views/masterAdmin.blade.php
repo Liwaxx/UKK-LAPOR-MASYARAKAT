@@ -13,9 +13,12 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>@yield('title')</title>
     <link rel="stylesheet" href="{{asset('main.css')}}">
+    {{-- <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.1.3/css/bootstrap.css"> --}}
+    <link rel="stylesheet" href="https://cdn.datatables.net/1.10.20/css/dataTables.bootstrap4.min.css">
 </head>
 
 <body>
+    @yield('alert')
     <div class="app-container app-theme-white body-tabs-shadow fixed-sidebar fixed-header">
         <div class="app-header header-shadow">
             <div class="app-header__logo">
@@ -134,23 +137,26 @@
                         <ul class="vertical-nav-menu">
                             <li class="app-sidebar__heading">Dashboards</li>
                             <li>
-                            <a href="{{ url('/admin')}}" class="{{ Request::path() ==  'admin/' ? 'mm-active' : '' }}">
+                                <a href="{{ url('/admin')}}"
+                                    class="{{ Request::path() ==  'admin/' ? 'mm-active' : '' }}">
                                     <i class="metismenu-icon pe-7s-rocket"></i>
                                     Laporan Masyarakat
                                 </a>
                             </li>
                             <li>
-                            <a href="{{ url('/admin/data-user')}}" class="{{ Request::path() ==  'admin/data-user' ? 'mm-active' : '' }}">
+                                <a href="{{ url('/admin/data-user')}}"
+                                    class="{{ Request::path() ==  'admin/data-user' ? 'mm-active' : '' }}">
                                     <i class="metismenu-icon pe-7s-eyedropper">
                                     </i>User dan Petugas
                                 </a>
                             </li>
                             <li>
-                                <a href="{{ url('/admin/lainnya')}}" class="{{ Request::path() ==  'admin/lainnya' ? 'mm-active' : '' }}">
-                                        <i class="metismenu-icon pe-7s-lock">
-                                        </i>Lainnya
-                                    </a>
-                                </li>
+                                <a href="{{ url('/admin/lainnya')}}"
+                                    class="{{ Request::path() ==  'admin/lainnya' ? 'mm-active' : '' }}">
+                                    <i class="metismenu-icon pe-7s-lock">
+                                    </i>Lainnya
+                                </a>
+                            </li>
                         </ul>
                     </div>
                 </div>
@@ -164,7 +170,7 @@
                                 <ul class="nav">
                                     <li class="nav-item">
                                         <a href="javascript:void(0);" class="nav-link">
-                                                &copy; 2019 Lapor.MAS
+                                            &copy; 2019 Lapor.MAS
                                         </a>
                                     </li>
                                 </ul>
@@ -187,7 +193,11 @@
             </div>
         </div>
     </div>
+    @yield('modal')
 </body>
 <script src="{{asset('assets/scripts/main.js')}}"></script>
-
+<script src="https://code.jquery.com/jquery-3.3.1.js"></script>
+<script src="https://cdn.datatables.net/1.10.20/js/jquery.dataTables.min.js"></script>
+<script src="https://cdn.datatables.net/1.10.20/js/dataTables.bootstrap4.min.js"></script>
+@yield('script')
 </html>

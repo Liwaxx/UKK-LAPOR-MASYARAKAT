@@ -20,10 +20,12 @@ class CreateLaporansTable extends Migration
             $table->text('lokasi');
             $table->string('gambar');
             $table->bigInteger('id_kategori')->unsigned();
+            $table->bigInteger('status')->unsigned()->default(1);
             $table->timestamps();
 
             $table->foreign('id_user')->references('id_user')->on('user');
             $table->foreign('id_kategori')->references('id_kategori')->on('kategori');
+            $table->foreign('status')->references('id')->on('statuses');
         });
     }
 

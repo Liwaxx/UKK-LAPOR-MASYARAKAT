@@ -188,7 +188,7 @@ Dashboard
                                     </td>
                                     <td class="text-center">
                                         <button type="button" id="PopoverCustomT-1"
-                                            class="btn btn-primary btn-sm">Details</button>
+                                            class="btn btn-primary btn-sm">Edit</button>
                                     </td>
                                 </tr>
                                 <tr>
@@ -216,7 +216,7 @@ Dashboard
                                     </td>
                                     <td class="text-center">
                                         <button type="button" id="PopoverCustomT-2"
-                                            class="btn btn-primary btn-sm">Details</button>
+                                            class="btn btn-primary btn-sm">Edit</button>
                                     </td>
                                 </tr>
                                 <tr>
@@ -244,7 +244,7 @@ Dashboard
                                     </td>
                                     <td class="text-center">
                                         <button type="button" id="PopoverCustomT-3"
-                                            class="btn btn-primary btn-sm">Details</button>
+                                            class="btn btn-primary btn-sm">Edit</button>
                                     </td>
                                 </tr>
                                 <tr>
@@ -271,7 +271,7 @@ Dashboard
                                     </td>
                                     <td class="text-center">
                                         <button type="button" id="PopoverCustomT-4"
-                                            class="btn btn-primary btn-sm">Details</button>
+                                            class="btn btn-primary btn-sm">Edit</button>
                                     </td>
                                 </tr>
                             </tbody>

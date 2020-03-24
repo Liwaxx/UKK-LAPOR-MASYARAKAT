@@ -27,28 +27,31 @@ Route::get('/register', function () {
 });
 Route::post('/register', 'AuthController@postRegis');
 
-Route::group(['middleware' => ['auth']], function () {
-
+//LOGIN ONLY
+Route::group(['middleware' => ['auth','revalidate']], function () {
+    Route::prefix('user')->group(function() {
+        Route::get('/', function () {
+            return view('pages.user.dashboard');
+        });
+        Route::get('/lapor', function () {
+            return view('pages.user.buatLaporan');
+        });
+    });
 });
 
 //PREFIX USER
-Route::prefix('user')->group(function() {
-    Route::get('/', function () {
-        return view('pages.user.dashboard');
-    });
-    Route::get('/lapor', function () {
-        return view('pages.user.buatLaporan');
-    });
-});
 
 //PREFIX ADMIN
 Route::prefix('admin')->group(function() {
+
     Route::get('/', function () {
         return view('pages.admin.dashboard');
     });
-    Route::get('/data-user', function () {
-        return view('pages\admin\admin1');
-    });
+    Route::get('/data-user', 'AdminConrtoller@pageUser');
+    Route::get('/lainnya', 'AdminController@pageLainnya');
+
+    //KATEGORI
+    Route::post('/add-kategori', 'KategoriController@insert')->name('add-kategori');
 });
 
 //PREFIX PETUGAS
